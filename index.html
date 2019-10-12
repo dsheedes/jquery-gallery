@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>jQuery Gallery</title>
+        <link rel="stylesheet" href="css/stylesheet.css" />
+        <meta charset="utf-8"/>
+    </head>
+<body>
+    <div id="info-text">
+        <h1>jQuery Gallery</h1>
+        <p>A simple, responsive gallery built with jQuery</p>
+        <p>by Gvozden Despotovski</p>
+    </div>
+    <div id="gallery">
+            <img src="images/abstract-art-abstract-expressionism-art-2860804.jpg" data-gallery-caption="Abstract art abstract expressionism art">
+            <img src="images/abstract-abstract-background-abstract-expressionism-2157891.jpg" data-gallery-caption="Abstract art abstract expressionism art">
+            <img src="images/4k-wallpaper-abstract-background-abstract-oil-painting-1677503.jpg" data-gallery-caption="Abstract art abstract expressionism art">
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+
+<script>
+    $("#gallery").gallery({
+        loop: false,
+        thumbnails:true,
+        caption:true
+    });
+</script>
+</body>
+</html>
