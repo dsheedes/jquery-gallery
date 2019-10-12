@@ -92,7 +92,9 @@
             }).appendTo($(this));
         }
 
-        $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[0].data("gallery-caption")+"</p>");
+        if(images[0].data("gallery-caption") != undefined)
+            $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[0].data("gallery-caption")+"</p>");
+
         //Listening for input
         $("#gallery-control-left").click(function(){ 
             if(currentImage > 0){
@@ -105,7 +107,11 @@
                 }
 
                 currentImage--;
-                $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                if(images[currentImage].data("gallery-caption") != undefined) {
+                    $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                } else {
+                    $("#gallery-caption-container").html("");
+                }
             } else if(loop){
                 images[currentImage].hide();
                 images[images.length - 1].show();
@@ -116,7 +122,11 @@
                 }
 
                 currentImage = images.length - 1;
-                $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                if(images[currentImage].data("gallery-caption") != undefined) {
+                    $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                } else {
+                    $("#gallery-caption-container").html("");
+                }    
             }
         });
         $("#gallery-control-right").click(function(){
@@ -129,7 +139,11 @@
                     thumbnails[currentImage].css({"height":"32px", "width":"32px"});
                 }
                 currentImage++;
-                $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                if(images[currentImage].data("gallery-caption") != undefined) {
+                    $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[currentImage].data("gallery-caption")+"</p>");
+                } else {
+                    $("#gallery-caption-container").html("");
+                }
             } else if(loop){
                 images[currentImage].hide();
                 images[0].show();
@@ -139,7 +153,11 @@
                     thumbnails[currentImage].css({"height":"32px", "width":"32px"});
                 }
 
-                $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[0].data("gallery-caption")+"</p>");
+                if(images[0].data("gallery-caption") != undefined) {
+                        $("#gallery-caption-container").html("<p style='padding:5px; margin:0'>"+images[0].data("gallery-caption")+"</p>");
+                } else {
+                    $("#gallery-caption-container").html("");
+                }
                 currentImage = 0;
             }
         });
